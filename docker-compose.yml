@@ -1,0 +1,7 @@
+services:
+  node-backend:
+    build: ./node-backend
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
