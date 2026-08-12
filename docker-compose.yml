@@ -3,5 +3,12 @@ services:
     build: ./node-backend
     ports:
       - "3000:3000"
-    environment:
-      - PORT=3000
+    env_file:
+      - node-backend/.env
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
